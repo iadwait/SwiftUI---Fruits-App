@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var fruits: [FruitDataModel] = fruitsData
+    
     var body: some View {
-        Text("Home Page")
+        NavigationView {
+            List {
+                ForEach(fruits) { item in
+                    FruitRowView(fruit: item)
+                        .padding(.vertical, 4)
+                        .listRowSeparator(.hidden, edges: .bottom)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(fruits: fruitsData)
 }
