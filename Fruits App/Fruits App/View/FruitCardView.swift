@@ -52,5 +52,5 @@ struct FruitCardView: View {
 
 // MARK: - PREVIEW
 #Preview {
-    FruitCardView(fruit: fruitsData[1])
+    FruitCardView(fruit: fruitsData[0])
 }
