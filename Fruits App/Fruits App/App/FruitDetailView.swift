@@ -12,7 +12,32 @@ struct FruitDetailView: View {
     var fruit: FruitDataModel
     
     var body: some View {
-        Text(fruit.title)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(alignment: .center, spacing: 20, content: {
+                    VStack(alignment: .center, spacing: 20, content: {
+                        Text(fruit.title)
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                            .foregroundColor(fruit.gradientColors[1])
+                        
+                        Text(fruit.headline)
+                            .font(.headline)
+                            .multilineTextAlignment(.leading)
+                        
+                        Text("Learn more about \(fruit.title)".uppercased())
+                            .fontWeight(.bold)
+                            .foregroundColor(fruit.gradientColors[1])
+                        
+                        Text(fruit.description)
+                            .multilineTextAlignment(.leading)
+                        
+                    })
+                    .frame(maxWidth: 640, alignment: .center)
+                    .padding(.horizontal, 20)
+                })
+            }
+        }
     }
 }
 
